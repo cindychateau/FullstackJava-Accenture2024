@@ -44,5 +44,92 @@
         <li>Angel of salvation</li>
     </ol>
     
+    <!-- TABLA -->
+    <table>
+        <!-- Table header -->
+        <thead>
+            <!-- Table row - Fila de Tabla -->
+            <tr>
+                <th>Nombre</th> <!-- Table heading - Titulo de tabla -->
+                <th>Apellido</th>
+                <th>E-mail</th>
+            </tr>
+        </thead>
+        <!-- Table body - Cuerpo tabla -->
+        <tbody>
+            <tr>
+                <!-- Table data -->
+                <td>Juana</td>
+                <td>De Arco</td>
+                <td>juana@codingdojo.la</td>
+            </tr>
+            <tr>
+                <td>Elena</td>
+                <td>De Troya</td>
+                <td>elena@codingdojo.la</td>
+            </tr>
+            <tr>
+                <td>Pedro</td>
+                <td>Páramo</td>
+                <td>pedro@codingdojo.la</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <img src="img/gatito.jpg" alt="Imagen de Gatito" width="100" >
+    <img src="https://codingdojolatam.la/wp-content/uploads/2023/11/logo-azul-trans.png" alt="Logo Coding Dojo">
+
+    <p>
+        <a href="https://google.com" target="_blank" >Haz click aquí</a>
+    </p>
+
+    <a href="https://codingdojolatam.la" target="_blank">
+        <img src="https://codingdojolatam.la/wp-content/uploads/2023/11/logo-azul-trans.png" alt="Logo Coding Dojo">
+    </a>
+    
+    <div> <!-- Divisor, Bloque -->
+
+    </div>
+    
+    <!-- FORMULARIO -->
+    <form action="#" method="post" > <!-- action=A donde enviaré la info, method= el método que se utilizara -->
+        <div>
+            <label for="identificador_nombre">Nombre:</label> <!-- "etiqueta"/referencia al campo input -->
+            <input type="text" name="input_texto" id="identificador_nombre" ><!-- Campo para ingresar info-->
+        </div>
+        <div>
+            <label>Edad</label>
+            <input type="number" name="input_numeral" placeholder="Ingresa tu edad" >
+            <input type="password" name="contasena" >
+            <input type="date" name="input_fecha">
+            <input type="email" name="input_correo" > <!-- Hasta enviar formulario revisa que sea correcto -->
+        </div>
+        <div>
+            <label>Estado Civil:</label><br>
+            <input type="radio" name="estado_civil" value="casado" id="casado_id"  >
+            <label for="casado_id" >Casado</label> <!-- for="identificador del input" --> <br> <!-- Salto de línea -->
+            <input type="radio" name="estado_civil" value="soltero" id="soltero_id" >
+            <label for="soltero_id">Soltero</label>
+        </div>
+        <div>
+            <label>¿Cuál es tu lenguaje de programación favorito?</label>
+            <select name="lenguaje">
+                <option value="1">Python</option>
+                <option value="5">Java</option>
+                <option value="8">C#</option>
+            </select>
+        </div>
+        <div>
+            <input type="checkbox" name="terminos_condiciones" id="terminos_condiciones" >
+            <label for="terminos_condiciones">Acepto términos y condiciones</label>
+        </div>
+        <div>
+            <textarea name="comentario" cols="40" rows="10" maxlength="10" ></textarea>
+        </div>
+        <div>
+            <input type="submit" value="Enviar Información" > <!-- botón que envía el formulario -->
+        </div>
+    </form>
+
 </body>
 </html>

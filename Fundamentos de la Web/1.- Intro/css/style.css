@@ -140,3 +140,9 @@ textarea, input {
 
     border: black 3px solid; /*solid dotted dashed double*/
 }
+
+header {
+    width: 100px;
+    height: 100px;
+    background-color: black;
+}

@@ -16,6 +16,13 @@ etiqueta {
 }
 
 */
+/*CSS RESET*/
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
 
 h2 {
     color: purple;
@@ -115,3 +122,21 @@ textarea, input {
 }
 
 /*MODELO DE CAJA - BOX MODEL*/
+.caja {
+    background-color: lightblue;
+    width: 100px; 
+    height: 100px;
+    /*Margin: el espacio entre mi elemento y el resto de la página*/
+    margin: 20px;
+    margin-top: 40px; /*-top, -right, -bottom, -left*/
+    margin: 100px 15px; /*ArribaAbajo IzqDer*/
+    margin: 50px 10px 100px 200px; /*Arriba Der Abajo Izq*/
+
+    /*Padding: margen interno, espacio entre donde comienza mi elemento y lo que hay dentro*/
+    padding: 20px;
+    padding-left: 50px; /*-top, -right, -bottom, -left*/
+    padding: 10px 100px; /*ArribaAbajo IzqDer*/
+    padding: 10px 30px 50px 100px; /*Arriba Der Abajo Izq*/
+
+    border: black 3px solid; /*solid dotted dashed double*/
+}

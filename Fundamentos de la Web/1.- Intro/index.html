@@ -4,26 +4,47 @@
     <meta charset="UTF-8"> <!-- Acentos, tildes, ñ, caracteres especiales -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Escala 1:1 -->
     <title>Intro a HTML</title> <!-- Título / Visualiza en la pestaña navegador -->
+    <link rel="stylesheet" href="css/style.css"> <!-- Enlace con CSS -->
 </head>
 <body> <!-- Contenido del sitio web, visualizar el usuario  -->
     
     <!-- Encabezados/Headings/Título -->
     <h1>Título Principal</h1> <!-- Título más importante -->
     <h2>Encabezado 2</h2>
-    <h3>Encabezado 3</h3>
+    <h3 id="encabezado3" class="rojo">Encabezado 3</h3>
     <h4>Encabezado 4</h4>
     <h5>Encabezado 5</h5>
     <h6>Encabezado 6</h6>
 
-    <p>
+    <p class="rojo subrayado color_amarillo">
         Aquí se encuentra nuestro <br> primer párrafo.
     </p>
-    <p>
+    <p id="parrafo_especial">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, hic. Nihil dolorem officia aperiam ratione dolores, suscipit est inventore voluptatem omnis enim recusandae molestias ipsum in autem aspernatur facere illo!
     </p>
     <p>
         <strong>Negritas un texto</strong> <em>Itálicas mi texto</em> <b>Negritas mi texto</b> <u>Subrayado mi texto</u>
     </p>
+    <strong>Este es otro strong</strong>
+    <p>
+        <strong>A este también aplica</strong>
+    </p>
+
+    <div>
+        <a href="#">Este es un enlace 1</a>
+        <p>
+            <a href="#">Este es un enlace 2</a>
+        </p>
+        
+    </div>
+
+    <div>
+        <a href="#">Este es un enlace 1</a>
+        <p>
+            <a href="#">Este es un enlace 2</a>
+        </p>
+        
+    </div>
 
     <h2>Lista desordenada - Compras</h2>
     <!-- Unordered List -->
@@ -92,7 +113,7 @@
     </div>
     
     <!-- FORMULARIO -->
-    <form action="#" method="post" > <!-- action=A donde enviaré la info, method= el método que se utilizara -->
+    <form action="#" method="post" class="formulario" > <!-- action=A donde enviaré la info, method= el método que se utilizara -->
         <div>
             <label for="identificador_nombre">Nombre:</label> <!-- "etiqueta"/referencia al campo input -->
             <input type="text" name="input_texto" id="identificador_nombre" ><!-- Campo para ingresar info-->
@@ -130,6 +151,8 @@
             <input type="submit" value="Enviar Información" > <!-- botón que envía el formulario -->
         </div>
     </form>
-
+    <p class="colores">
+        Reglas de Colores
+    </p>
 </body>
 </html>

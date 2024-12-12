@@ -1,0 +1,83 @@
+/* CSS: Cascade Style Sheets
+Estilizar el HTML que tengamos
+*/
+/*
+SELECTORES
+etiqueta {
+    propiedad: valor;
+}
+
+.clase {
+    propiedad: valor;
+}
+
+#id {
+    propiedad: valor;
+}
+
+*/
+
+h2 {
+    color: purple;
+    font-size: 40px;
+}
+
+.rojo {
+    color: red;
+}
+
+.subrayado { /*camelCase  sub_rayado */
+    text-decoration: underline;
+}
+
+#parrafo_especial {
+    border: 2px solid blue; /*Linea solida/recta*/
+}
+
+.formulario {
+    border: 1px dotted black;
+    border-radius: 4px;
+}
+
+#encabezado3 {
+    color: green;
+}
+
+.color_amarillo {
+    color: yellow;
+}
+
+/*JERARQUIA: ID, CLASES, ETIQUETA*/
+
+p strong { /*Etiqueta strong dentro de p*/
+    text-transform: uppercase;
+    color: brown;
+}
+/*
+.rojo strong
+#parrafo_especial .rojo
+.formulario #encabezado3
+*/
+
+div > a { /*Aplica solo para descendiente directo*/
+    text-decoration: line-through;
+}
+
+input[type="number"] {
+    width: 350px;
+}
+
+input[type="text"] {
+    height: 100px;
+}
+
+textarea, input {
+    border: 3px solid magenta;
+}
+
+.colores {
+    /* color: magenta; */
+    /* color: rgb(111, 192, 243); */
+    color: #02abe4; /*Color de letra*/
+    background-color: green; /*Color de Fondo*/
+}

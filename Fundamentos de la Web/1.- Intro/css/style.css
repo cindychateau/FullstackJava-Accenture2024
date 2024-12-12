@@ -75,9 +75,43 @@ textarea, input {
     border: 3px solid magenta;
 }
 
+/*COLORES*/
 .colores {
     /* color: magenta; */
     /* color: rgb(111, 192, 243); */
     color: #02abe4; /*Color de letra*/
     background-color: green; /*Color de Fondo*/
 }
+
+/*TEXTO*/
+#texto {
+    text-align: left; /*left, center, right, justify*/
+    text-decoration: underline; /*none, underline, line-through, overline */
+    font-style: italic; /*italic, normal*/
+    font-weight: bold; /*normal, light, 100, 300, 900*/
+    font-size: 20px; /*tamaño de letra, pt em*/
+    font-family: sans-serif; /*serif, monospace, cursive*/
+}
+
+/*TAMAÑO*/
+.tamano {
+    width: 400px; /*ANCHO*/
+    height: 50px; /*ALTO*/
+    background-color: darkblue;
+}
+
+/*BACKGROUND*/
+.background {
+    width: 400px;
+    height: 600px;
+    border: 1px solid black;
+
+    background-color: aqua;
+    background-image: url(../img/gatito_small.jpg);
+    background-repeat: no-repeat; /*no-repeat, repeat-x, repeat-y, repeat*/
+    background-size: cover; /*cover: estirar verticalmente, contain: estirar horizontal*/
+
+    background: url(../img/gatito_small.jpg) no-repeat;
+}
+
+/*MODELO DE CAJA - BOX MODEL*/

@@ -146,3 +146,33 @@ header {
     height: 100px;
     background-color: black;
 }
+
+.inline {
+    /*Me despliega en una sola línea PERO no puedo dar tamaños*/
+    display: inline;
+}
+
+.block {
+    /*Me despliega el elemento como BLOQUE, no puede haber nada en esa misma línea, SI PUEDO tener un tamaño*/
+    display: block;
+}
+
+.inline-block {
+    /*Me permite colocar los elementos en una misma línea y dar un tamaño específico*/
+    display: inline-block;
+    width: 300px;
+    border: 1px solid black;
+    vertical-align: top; /*top, bottom, middle*/
+}
+
+#div1 {
+    height: 150px;
+}
+
+#div2 {
+    height: 500px;
+}
+
+#div3 {
+    height: 300px;
+}

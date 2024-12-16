@@ -1,0 +1,72 @@
+/*CSS RESET*/
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+div {
+    border: 1px solid black;
+    padding: 10px;
+    margin: 5px;
+}
+
+.container1 {
+    background-color: red;
+    width: 1200px;
+    height: 200px;
+    display: flex;
+    /*Acomodo vertical*/
+    align-items: center; /*center, flex-start flex-end, stretch*/
+
+    /*Acomodo horizontal*/
+    justify-content: flex-start; /*flex-start, flex-end, center, space-between, space-around, space-evenly*/
+
+    /*Dirección*/
+    flex-direction: row; /*row, row-reverse, column, column-reverse*/
+}
+
+.seccion {
+    width: 200px;
+    background-color: yellow;
+}
+
+#s1 {
+    height: 100px
+}
+
+#s2 {
+    height: 200px;
+}
+
+#s3 {
+    height: 150px;
+}
+
+.container2 {
+    background-color: violet;
+    width: 1200px;
+    height: 200px;
+    display: flex;
+}
+
+/*.container2 > div*/
+.section1, .section2, .section3 {
+    flex: 1;
+    background-color: white;
+}
+
+.section2 {
+    flex: 2;
+}
+
+.section3 {
+    flex: 3;
+}
+
+/*
+section1 = 1 -> 1/6
+section2 = 2 -> 2/6 = 1/3
+section3 = 3 -> 3/6 = 1/2
+TOTAL: 6
+*/

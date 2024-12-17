@@ -1,0 +1,37 @@
+/*CSS RESET*/
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+.container {
+    border: 3px solid black;
+    height: 1500px;
+    /* position: relative; */
+}
+
+.elemento {
+    background-color: gray;
+    padding: 10px;
+    position: relative;
+}
+
+.elemento-principal {
+    background-color: yellow;
+    padding: 10px;
+    /* position: static; POR DEFECTO: el elemento no se mueve */
+    position: relative; /*Me permite el uso de top, left, bottom, right. Me muevo en base a la posición original. Y el resto de los elementos se queda ahí*/
+
+    position: absolute; /*Se mueve en base al contenedor padre (relative), ignroar el resto de los elementos*/
+
+    position: fixed; /*No se ve afectada por el scroll y los elementos alrededor lo ignoran*/
+
+    position: sticky; /*Va a tener la posición original, al hacer scroll me fija el elemento*/
+
+    /*Movimiento: top, left, bottom, right*/
+    top: 20px;
+    left: 15px;
+
+    z-index: 2;/*Profundidad, que tan adelante/atras quiero mi elemento. Entre más alto el num más al frente*/
+}

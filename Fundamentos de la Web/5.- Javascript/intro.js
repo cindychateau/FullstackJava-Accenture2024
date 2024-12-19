@@ -183,3 +183,59 @@ console.log(hobbies);
 console.log(hobbies.length); //regresa el tamaño de la lista
 
 //¿Cómo puedo recorrer una lista?
+/*
+i = 0
+IMPRIMIR leer
+--
+i = 1
+IMPRIMIR correr
+....
+i = 5
+IMPRIMIR tocar guitarra
+--
+i = 6
+*/
+for(let i = 0; i< hobbies.length; i++){
+    console.log(hobbies[i]);
+}
+
+let lista=[1, 2, 3, 4];
+let i=0
+while(i < lista.length){
+  console.log(lista[i]);
+  i++;
+}
+
+let nombres = ["Juana", "Elena", "Pablo", "Pedro"];
+for(let i = 0; i < nombres.length; i++) {
+    console.log(`La posición ${i} tiene al nombre ${nombres[i]}`);
+    console.log("La posición "+i+ "tiene al nombre "+nombres[i]);
+}
+
+let lista_super = [
+                    "Manzanas",
+                    "Huevo",
+                    "Leche",
+                    "Jamón"
+                ];
+
+for(let i=0; i < lista_super.length; i++) {
+    console.log("Yo necesito:"+lista_super[i]);
+}
+
+let lista_combinada = [
+    "letras",
+    12,
+    1.1
+];
+
+let matriz = [
+    [1, 2, 3, 4, 5],
+    [6, 7, 8, 9, 10],
+    [11, 12, 13, 14, 15]
+];
+
+console.log(matriz[1][1]+" "+matriz[2][1]);
+console.log(lista_combinada[0]);
+console.log(matriz[2]);
+

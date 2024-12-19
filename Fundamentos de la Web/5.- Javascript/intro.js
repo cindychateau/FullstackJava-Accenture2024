@@ -239,3 +239,45 @@ console.log(matriz[1][1]+" "+matriz[2][1]);
 console.log(lista_combinada[0]);
 console.log(matriz[2]);
 
+/* OBJETOS */
+let estudiante = {
+    id: 123,
+    nombre: "Elena",
+    apellido: "De Troya",
+    "edad": 25,
+    "hobbies": ["Leer", "Bailar", "Ver series"],
+    "direcciones": [
+        {
+            "calle": "Av. Sol",
+            "num": 123,
+            "ciudad": "Comala",
+            "pais": "México"
+        },
+        {
+            "calle": "Primera Ave.",
+            "num": 345,
+            "ciudad": "Furia",
+            "pais": "México"
+        }
+    ]
+}
+
+console.log(estudiante["nombre"]);
+console.log(estudiante.apellido);
+
+estudiante.apellido = "De Arco";
+console.log(estudiante);
+
+estudiante.curso = "Full stack Java";
+console.log(estudiante);
+
+let curso = {
+    "nombre": "Java",
+    "instructor": "Cynthia",
+    "descripcion": "Es un curso de Full stack java",
+    "duracion": 7
+};
+
+console.log(curso.instructor);
+
+const noPuedeCambiar = "No va a cambiar";

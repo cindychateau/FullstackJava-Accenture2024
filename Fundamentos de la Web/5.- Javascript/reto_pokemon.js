@@ -25,9 +25,37 @@ var pokémon = [ //Arreglo
 ];
 
 /*  Imprimir todos los NOMBRES de pokemones con ID mayor a 99  */
+let i = 0;
+while(i < pokémon.length) {
+    if(pokémon[i].id > 99) {
+        console.log(pokémon[i].name);
+    }
+    i++;
+}
+for(let i=0; i<pokemon.length;i++){
+    if(pokemon[i].id>99){
+        console.log(pokemon[i].name);
+    }
+}
 
 /* Imprimir el OBJETO (pokemon) en el cual el id es divisible entre 3 */
+for (let i = 0; i < pokemon.length; i++) {
+    if (pokemon[i].id % 3 == 0) console.log(pokemon[i]);
+}
 
 /* Imprimir el OBJETO con más de un tipo */
+for(let i=0;i<pokemon.length;i++){
+    if(pokemon[i].types.length > 1){
+        console.log(pokemon[i]);
+    }
+}
 
 /* Imprimir NOMBRE de pokemon que SOLO TIENE tipo "poison" */
+
+if(1 == "1") { //== compara solo valores
+    console.log("Comparando solo valores");
+}
+
+if(1 === "1") { // === comparar el valor y además el tipo de dato
+    console.log("NO entra");
+}

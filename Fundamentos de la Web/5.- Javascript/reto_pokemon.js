@@ -32,25 +32,42 @@ while(i < pokémon.length) {
     }
     i++;
 }
-for(let i=0; i<pokemon.length;i++){
-    if(pokemon[i].id>99){
-        console.log(pokemon[i].name);
+for(let i=0; i<pokémon.length;i++){
+    if(pokémon[i].id>99){
+        console.log(pokémon[i].name);
     }
 }
 
 /* Imprimir el OBJETO (pokemon) en el cual el id es divisible entre 3 */
-for (let i = 0; i < pokemon.length; i++) {
-    if (pokemon[i].id % 3 == 0) console.log(pokemon[i]);
+for (let i = 0; i < pokémon.length; i++) {
+    if (pokémon[i].id % 3 == 0) console.log(pokémon[i]);
 }
 
 /* Imprimir el OBJETO con más de un tipo */
-for(let i=0;i<pokemon.length;i++){
-    if(pokemon[i].types.length > 1){
-        console.log(pokemon[i]);
+for(let i=0;i<pokémon.length;i++){
+    if(pokémon[i].types.length > 1){
+        console.log(pokémon[i]);
     }
 }
 
 /* Imprimir NOMBRE de pokemon que SOLO TIENE tipo "poison" */
+console.log('Imprimir NOMBRE de pokemon que SOLO TIENE tipo "poison"')
+for(let i=0;i<pokémon.length;i++){
+    if(pokémon[i].types == "poison") { //["poison"] == "poison"
+        console.log(pokémon[i].name);
+    }
+}
+
+i=0;
+while(i < pokémon.length) {
+    if(pokémon[i].types == "poison") {
+        console.log(pokémon[i].name);
+    }
+    i++;
+}
+
+
+
 
 if(1 == "1") { //== compara solo valores
     console.log("Comparando solo valores");

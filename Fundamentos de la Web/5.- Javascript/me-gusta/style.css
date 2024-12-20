@@ -1,0 +1,33 @@
+* {
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.seccion {
+    background-color: lightgray;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 800px;
+    margin: 10px auto;
+    padding: 10px 20px;
+    display: flex;
+}
+
+.izquierda {
+    flex: 5;
+}
+
+.derecha {
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+.derecha button {
+    background-color: yellow;
+    padding: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+}

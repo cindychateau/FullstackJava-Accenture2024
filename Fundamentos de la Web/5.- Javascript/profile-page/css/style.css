@@ -166,3 +166,17 @@ a {
     padding: 0 10px;
     margin-right: 10px;
 }
+
+.nueva {
+    color: red;
+    background-color: black;
+    border: 1px solid yellow;
+    border-radius: 10px;
+    text-decoration: line-through;
+}
+
+.dark-mode {
+    background-color: black;
+    color: white;
+    font-style: italic;
+}

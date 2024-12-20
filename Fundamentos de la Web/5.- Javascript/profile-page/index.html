@@ -30,15 +30,15 @@
                         <img src="images/jane-m.jpg" alt="jane-medium-avatar" class="avatar-m" onmouseover="cambia_imagen(this)" onmouseout="regresa_imagen(this)" >
                     </div>
                     <div class="card-body">
-                        <h1>Jane Doe</h1>
+                        <h1 id="nombre">Jane Doe</h1>
                         <h3>
                             <img src="images/map-marker.png" alt="pin" class="icon-s"> 
                             Seattle
                         </h3>
-                        <p>Developer | Engineer | Problem Solver<br>
+                        <p class="descripcion">Developer | Engineer | Problem Solver<br>
                         Master of shadows and the Internet!</p>
                         <p>
-                            <a href="#">
+                            <a href="#" onclick="editar_perfil()">
                                 <img src="images/gear.png" alt="gear" class="icon-s"> 
                                 edit profile
                             </a>
@@ -122,6 +122,10 @@
                 </div>
             </div>  
         </div>
+        <input type="text" id="buscador" placeholder="Buscar..." >
+        <button onclick="busqueda()" >Buscar</button>
+        <button onclick="cambiar_modo()">Dark Mode</button>
+
     </div>
     <script src="js/script.js" ></script>
 </body>

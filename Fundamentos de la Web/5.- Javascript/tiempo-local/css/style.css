@@ -1,0 +1,75 @@
+/*CSS RESET*/
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: "Lato", serif;
+}
+
+/*HEADER*/
+.encabezado {
+    background-color: #3499ff;
+    text-align: center;
+    color: white;
+    padding: 10px;
+    -webkit-box-shadow: -1px 2px 8px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 2px 8px 0px rgba(0,0,0,0.75);
+    box-shadow: -1px 2px 8px 0px rgba(0,0,0,0.75);
+}
+
+nav ul {
+    list-style: none; /*Eliminar la viñeta*/
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 20px 0; /* ArribaAbajo IzqDer */
+}
+
+nav a {
+    color: white;
+    text-decoration: none; /*Quitar el subrayado*/
+}
+
+form select {
+    padding: 5px;
+}
+
+/*MAIN*/
+main {
+    text-align: center;
+}
+
+main h2 {
+    font-size: 45px;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.semana {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.card {
+    background-color: #f9f9f9;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    -webkit-box-shadow: -1px 2px 8px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 2px 8px 0px rgba(0,0,0,0.75);
+    box-shadow: -1px 2px 8px 0px rgba(0,0,0,0.75);
+    width: 150px;
+    height: 200px;
+    padding: 15px 0;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-around; */
+}
+
+.card img {
+    width: 70px;
+}
+
+.card p {
+    margin: 20px 0;
+}

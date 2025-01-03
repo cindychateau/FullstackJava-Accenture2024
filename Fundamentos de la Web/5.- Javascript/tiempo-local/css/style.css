@@ -73,3 +73,20 @@ main h2 {
 .card p {
     margin: 20px 0;
 }
+
+footer {
+    background-color: black;
+    color: white;
+    position: fixed; /*Fija mi elemento en un espacio*/
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+}
+
+footer button {
+    background-color: yellow;
+    padding: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+}

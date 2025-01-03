@@ -15,19 +15,19 @@
         <nav>
             <ul>
                 <li>
-                   <a href="#">Buenos Aires</a> 
+                   <a href="#" onclick="cambiar_temperatura(this)">Buenos Aires</a> 
                 </li>
                 <li>
-                    <a href="#">Ciudad de México</a> 
+                    <a href="#" onclick="cambiar_temperatura(this)">Ciudad de México</a> 
                 </li>
                 <li>
-                    <a href="#">Santiago</a> 
+                    <a href="#" onclick="cambiar_temperatura(this)">Santiago</a> 
                 </li>
                 <li>
-                    <a href="#">Sao Paulo</a> 
+                    <a href="#" onclick="cambiar_temperatura(this)">Sao Paulo</a> 
                 </li>
                 <li>
-                    <a href="#">Quito</a> 
+                    <a href="#" onclick="cambiar_temperatura(this)">Quito</a> 
                 </li>
             </ul>
         </nav>
@@ -40,40 +40,46 @@
         </form>
     </header>
     <main>
-        <h2>Buenos Aires</h2>
+        <h2 id="titulo_ciudad">Buenos Aires</h2>
         <section class="semana">
             <div class="card">
                 <img src="assets/some_clouds.png" alt="nublado" >
                 <h3>Hoy</h3>
                 <p>Nublado</p>
-                <p>22C 15C</p>
+                <p id="temp0">22C 15C</p>
             </div>
             <div class="card">
                 <img src="assets/some_rain.png" alt="nublado" >
                 <h3>Mañana</h3>
                 <p>Lluvioso</p>
-                <p>20C 17C</p>
+                <p id="temp1">20C 17C</p>
             </div>
             <div class="card">
                 <img src="assets/some_rain.png" alt="nublado" >
                 <h3>Miércoles</h3>
                 <p>Tormentas</p>
-                <p>21C 18C</p>
+                <p id="temp2">21C 18C</p>
             </div>
             <div class="card">
                 <img src="assets/some_clouds.png" alt="nublado" >
                 <h3>Jueves</h3>
                 <p>Nublado</p>
-                <p>25C 20C</p>
+                <p id="temp3">25C 20C</p>
             </div>
             <div class="card">
                 <img src="assets/some_sun.png" alt="nublado" >
                 <h3>Viernes</h3>
                 <p>Soleado</p>
-                <p>28C 18C</p>
+                <p id="temp4">28C 18C</p>
             </div>
         </section>
     </main>
+    <footer>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. <a href="#">Leer más...</a>
+            <button onclick="eliminar_cookies(this)" >Acepto</button>
+        </p>
+    </footer>
     <script src="js/script.js" ></script>
 </body>
 </html>

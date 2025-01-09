@@ -12,14 +12,18 @@
 
 .slide {
     display: none;
+    /* background-color: black; */
+    text-align: center;
 }
 
 .slide img {
-    width: 100%;
+    max-width: 100%;
+    height: auto;
 }
 
 .db {
     display: block;
+    transition: 2s;
 }
 
 .prev, .next {

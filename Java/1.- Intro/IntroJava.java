@@ -4,6 +4,7 @@ camelCase - primeraMinNuevasMayuscula -> Nombre de variables y nombre de método
 javac NombreArchivo.java -> compilar
 java NombreArchivo -> interpret/ejecuta
  */
+import java.util.ArrayList;
 public class IntroJava {
 
     /*Método principal / main es lo único que se ejecuta */
@@ -110,6 +111,76 @@ public class IntroJava {
 
         int resultado = sumatoria(3, 4); // 7
         System.out.println("El resultado es:"+resultado);
+
+        /* ARREGLOS / ARRAYS / LISTAS: No se puede cambiar el tamaño */
+        int[] arreglo; //Declaración
+        arreglo = new int[5]; //Inicialización
+        arreglo[0] = 4;
+        arreglo[1] = 8;
+        arreglo[2] = 9;
+        arreglo[3] = 10;
+        arreglo[4] = 5;
+
+        int[] arreglo2 = {4, 8, 9, 10, 5}; //Arreglo de 5 espacios.  No se puede cambiar el tamaño
+
+        System.out.println(arreglo2); //Imprime el espacio en memoria 
+        System.out.println(arreglo2[2]); //Imprime el valor en índice 2
+        //arreglo2[1] = nuevoValor
+        
+        //<TipoDeDato>
+        ArrayList<Integer> arreglo3 = new ArrayList<Integer>(); //Declarando e Inicializando
+        arreglo3.add(10);
+        arreglo3.add(20);
+        arreglo3.add(30);
+
+        System.out.println(arreglo3); //.toString() -> pasarlo a que sea texto, se imprima bonito
+
+        ArrayList<String> estudiantes = new ArrayList<String>(); //Creando una lista de String
+        estudiantes.add("Juana"); //.add(valor) - Agregamos un nuevo valor a la lista
+        estudiantes.add("Miguel");
+        estudiantes.add("Bruno");
+
+        System.out.println(estudiantes.get(0)); //.get(indice) - Consulta un índice específico
+
+        estudiantes.set(0,"Juani"); //.set(indice, valor) - Cambia el valor de un índice
+        System.out.println(estudiantes.get(0));
+
+        /* BUCLES / CICLOS */
+        for(int abc=0; abc<5; abc++) { //(inicialización; condicional; paso)
+            System.out.println("hey!");
+        }
+
+        int m = 0;
+        while(m < 5) { //flexibilidad
+            System.out.println("listen!");
+            m++;
+        }
+
+        int inicio = 0;
+        int fin = 5;
+        while(inicio < fin) {
+            System.out.println("oh!");
+            inicio++;
+            fin--;
+        }
+
+        int n = 10;
+        do { //PRIMERO sin importar la condicional, ejecución
+            System.out.println("entramos al bucle");
+        } while(n < 5);
+
+        while(n<5) { //NO LO IMPRIME
+            System.out.println("entro a otro bucle");
+        }
+
+        /*
+        do {
+            //Imprima el menú
+
+        
+        }while(no haya escrito salir)
+        
+         */
 
     }
 

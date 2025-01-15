@@ -17,5 +17,10 @@ public class Aplicacion {
         System.out.println("autoRojo color:"+autoRojo.color);
         System.out.println("nuevoAuto anio:"+nuevoAuto.anio);
 
+        autoRojo.encender();
+        autoRojo.acelerar();
+
+        System.out.println(autoRojo.color);
+
     }
 }

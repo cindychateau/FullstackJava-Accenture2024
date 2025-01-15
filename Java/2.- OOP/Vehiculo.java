@@ -11,7 +11,7 @@ public class Vehiculo {
     public Vehiculo() {
         //Cree un nuevo vehículo vacío SIN INFO
     }
-    
+
     /* Sobrecarga de método constructor */
     public Vehiculo(String color) { //color = "rojo"
         //this = autoRojo
@@ -25,5 +25,15 @@ public class Vehiculo {
         this.color = color;
         this.ruedas = ruedas;
     }
+
+    public void encender() {
+        //this = autoRojo
+        System.out.println("El vehiculo "+this.color+" se encendio");
+    }
+
+    public void acelerar() {
+        System.out.println("El vehiculo "+this.color+" aceleró. RUMMM RUMMM");
+    }
+
 
 }

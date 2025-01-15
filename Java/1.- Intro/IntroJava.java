@@ -5,6 +5,7 @@ javac NombreArchivo.java -> compilar
 java NombreArchivo -> interpret/ejecuta
  */
 import java.util.ArrayList;
+import java.util.HashMap;
 public class IntroJava {
 
     /*Método principal / main es lo único que se ejecuta */
@@ -126,6 +127,8 @@ public class IntroJava {
         System.out.println(arreglo2); //Imprime el espacio en memoria 
         System.out.println(arreglo2[2]); //Imprime el valor en índice 2
         //arreglo2[1] = nuevoValor
+
+        //TAMAÑO de un array normal: .length
         
         //<TipoDeDato>
         ArrayList<Integer> arreglo3 = new ArrayList<Integer>(); //Declarando e Inicializando
@@ -144,6 +147,8 @@ public class IntroJava {
 
         estudiantes.set(0,"Juani"); //.set(indice, valor) - Cambia el valor de un índice
         System.out.println(estudiantes.get(0));
+
+        //.size() - Tamaño de mi ArrayList
 
         /* BUCLES / CICLOS */
         for(int abc=0; abc<5; abc++) { //(inicialización; condicional; paso)
@@ -181,6 +186,38 @@ public class IntroJava {
         }while(no haya escrito salir)
         
          */
+
+        /*
+        let estudiante = {
+            "nombre": "Juana",
+            "apellido": "De Arco"
+        }
+         */
+        //Mapas de Hash o HashMaps (Objeto)
+        HashMap<String, String> estudiante = new HashMap<String, String>();
+        //pon, agrega, coloca
+        estudiante.put("nombre", "Juana"); //.put(llave, valor) -> Ingresando un nuevo par de llave/valor
+        estudiante.put("apellido", "De Arco");
+        estudiante.put("curso", "Java");
+
+        System.out.println(estudiante.get("apellido")); //Consultar de mi estudiante la llave "apellido"
+        System.out.println(estudiante);
+        System.out.println(estudiante.size());
+
+        //.size() - Tamaño de mi HashMap
+
+        /* Bucle para recorrer un arreglo */
+        for(int indice=0; indice < arreglo.length; indice++) {
+            System.out.println("Arreglo:"+arreglo[indice]);
+        }
+
+        /* 3 métodos para crear un nombre de super heroe
+        
+        1.- Recibiera un nombre: Super <nombre>
+        2.- Recibiera un nombre y un color: Super <nombre> <color>
+        3.- Recibiera un nombre, color y habilidad: Super <nombre> <color> <habilidad>
+        
+          */
 
     }
 

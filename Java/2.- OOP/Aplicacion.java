@@ -2,7 +2,8 @@ public class Aplicacion {
     public static void main(String[] args) {
 
         //Crear un nuevo vehiculo
-        Vehiculo auto1 = new Vehiculo();
+        System.out.println("Creando auto1:");
+        Vehiculo auto1 = new Vehiculo(); //cantidadVehiculos = 1
         //auto1.anio = 2001;
         auto1.setAnio(2001);
         //auto1.marca = "Honda";
@@ -14,9 +15,11 @@ public class Aplicacion {
         //auto1.ruedas = 4;
         auto1.setRuedas(4);
 
-        Vehiculo autoRojo = new Vehiculo("rojo");
+        System.out.println("Creando autoRojo:");
+        Vehiculo autoRojo = new Vehiculo("rojo"); //cantidadVehiculos = 2
 
-        Vehiculo nuevoAuto = new Vehiculo(2025, "BMW", "CX-3", "Azul", 4);
+        System.out.println("Creando nuevoAuto:");
+        Vehiculo nuevoAuto = new Vehiculo(2025, "BMW", "CX-3", "Azul", 4); //cantidadVehiculos = 3
 
         System.out.println("Auto1 marca:"+auto1.getMarca());
         System.out.println("autoRojo color:"+autoRojo.getColor());
@@ -26,6 +29,8 @@ public class Aplicacion {
         autoRojo.acelerar();
 
         System.out.println(autoRojo.getColor());
+
+        Vehiculo.esAutomotora();
 
     }
 }

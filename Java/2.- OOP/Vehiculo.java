@@ -7,15 +7,27 @@ public class Vehiculo {
     private String color;
     private int ruedas;
 
+    //permiso: default
+
+    /* Este atributo es de la clase NO de instancia 
+    Global, que pertenece a mi clase
+    */
+    private static int cantidadVehiculos = 0;
+    private static String pais = "Mexico";
+
     /* Método constructor: encargado de inicializar la instancia */
     public Vehiculo() {
         //Cree un nuevo vehículo vacío SIN INFO
+        Vehiculo.cantidadVehiculos++; //+1
+        System.out.println("Cantidad:"+Vehiculo.cantidadVehiculos);
     }
 
     /* Sobrecarga de método constructor */
     public Vehiculo(String color) { //color = "rojo"
         //this = autoRojo
         this.color = color; //autoRojo.color = "rojo"
+        Vehiculo.cantidadVehiculos++;
+        System.out.println("Cantidad:"+Vehiculo.cantidadVehiculos);
     }
 
     public Vehiculo(int anio, String marca, String modelo, String color, int ruedas) {
@@ -24,6 +36,8 @@ public class Vehiculo {
         this.modelo = modelo;
         this.color = color;
         this.ruedas = ruedas;
+        Vehiculo.cantidadVehiculos++;
+        System.out.println("Cantidad:"+Vehiculo.cantidadVehiculos);
     }
 
     public void encender() {
@@ -77,6 +91,14 @@ public class Vehiculo {
 
     public int getRuedas() {
         return this.ruedas;
+    }
+
+    public static void esAutomotora() {
+        if(Vehiculo.cantidadVehiculos >= 5) {
+            System.out.println("¡Es una Automotora!");
+        } else {
+            System.out.println("No tiene autos suficientes");
+        }
     }
 
 }

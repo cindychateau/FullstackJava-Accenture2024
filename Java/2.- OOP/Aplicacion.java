@@ -3,24 +3,29 @@ public class Aplicacion {
 
         //Crear un nuevo vehiculo
         Vehiculo auto1 = new Vehiculo();
-        auto1.anio = 2001;
-        auto1.marca = "Honda";
-        auto1.modelo = "Civic";
-        auto1.color = "Blanco";
-        auto1.ruedas = 4;
+        //auto1.anio = 2001;
+        auto1.setAnio(2001);
+        //auto1.marca = "Honda";
+        auto1.setMarca("Honda");
+        //auto1.modelo = "Civic";
+        auto1.setModelo("Civic");
+        //auto1.color = "Blanco";
+        auto1.setColor("Blanco");
+        //auto1.ruedas = 4;
+        auto1.setRuedas(4);
 
         Vehiculo autoRojo = new Vehiculo("rojo");
 
         Vehiculo nuevoAuto = new Vehiculo(2025, "BMW", "CX-3", "Azul", 4);
 
-        System.out.println("Auto1 marca:"+auto1.marca);
-        System.out.println("autoRojo color:"+autoRojo.color);
-        System.out.println("nuevoAuto anio:"+nuevoAuto.anio);
+        System.out.println("Auto1 marca:"+auto1.getMarca());
+        System.out.println("autoRojo color:"+autoRojo.getColor());
+        System.out.println("nuevoAuto anio:"+nuevoAuto.getAnio());
 
         autoRojo.encender();
         autoRojo.acelerar();
 
-        System.out.println(autoRojo.color);
+        System.out.println(autoRojo.getColor());
 
     }
 }

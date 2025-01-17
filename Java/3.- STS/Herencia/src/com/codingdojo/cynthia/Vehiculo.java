@@ -2,10 +2,10 @@ package com.codingdojo.cynthia;
 
 public class Vehiculo {
 	
-	private int anio;
+	private int anio; //private: SOLO en esta clase me da permiso de acceder
 	private String marca;
 	private String modelo;
-	private String color;
+	protected String color;
 	private int ruedas;
 	
 	public Vehiculo() {
@@ -61,6 +61,19 @@ public class Vehiculo {
 
 	public void setRuedas(int ruedas) {
 		this.ruedas = ruedas;
-	}	
+	}
+
+	@Override //Sobreescribir
+	public String toString() {
+		return "Vehiculo (anio=" + anio + ", marca=" + marca + ", modelo=" + modelo + ", color=" + color + ", ruedas="
+				+ ruedas + ") :) wuwuwu";
+	}
+	
+	public void imprimeMarcaModelo() {
+		//super = Vehiculo
+		System.out.println(this.getMarca()+"-"+this.getModelo());
+	}
+	
+	
 
 }

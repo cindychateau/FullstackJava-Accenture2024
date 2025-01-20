@@ -2,7 +2,7 @@ package com.codingdojo.cynthia;
 
 //La clase Auto está heredando de la clase Vehiculo.
 //Solo podemos tener una clase padre
-public class Auto extends Vehiculo {
+public class Auto extends Vehiculo implements ManejarVehiculo {
 	
 	//1.- TODOS los atributos del padre (Vehiculo) son heredados
 	//2.- TODOS los métodos del padre (Vehiculo) sin heredados
@@ -40,6 +40,18 @@ public class Auto extends Vehiculo {
 	public String regresaMarcaModelo() {
 		//super = Vehiculo
 		return (super.getMarca()+"-"+super.getModelo()+":"+this.color);
+	}
+	
+	public void acelerar() {
+		System.out.println("Estamos pisando el acelerador.");
+		velocidad += 2;
+		System.out.println("Mi velocidad es de:"+velocidad+" km/h.");
+	}
+	
+	public void desacelerar() {
+		System.out.println("Estamos pisando el freno");
+		velocidad -= 2;
+		System.out.println("Mi velocidad es de:"+velocidad+" km/h.");
 	}
 
 }

@@ -8,6 +8,8 @@ public class Vehiculo {
 	protected String color;
 	private int ruedas;
 	
+	protected int velocidad = 0;
+	
 	public Vehiculo() {
 	}
 
@@ -74,6 +76,9 @@ public class Vehiculo {
 		System.out.println(this.getMarca()+"-"+this.getModelo());
 	}
 	
+	public String colorYRuedas() {
+		return "Color:"+this.color+" #Ruedas:"+this.ruedas;
+	}
 	
 
 }

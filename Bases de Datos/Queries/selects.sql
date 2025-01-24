@@ -36,6 +36,7 @@ SELECT nombre, edad FROM usuarios ORDER BY edad DESC LIMIT 0, 3; -- LIMIT inicio
 for(int i=0; i < 3; i++) 
 */
 -- SELECT columna1, columna2, columna3 FROM <tabla>
+-- JOINS
 -- WHERE condicional (AND OR)
 -- ORDER BY columna1 ASC/DESC
 -- LIMIT inicio, cantidad

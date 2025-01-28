@@ -21,7 +21,7 @@ public class ControladorBase {
 		String respuesta = "<ul>";
 		for(int i=0; i < usuarios.length; i++) {
 			//<li>Juana de Arco</li>
-			respuesta += "<li>"+usuarios[i]+"</li>";
+			respuesta += "<li>"+usuarios[i]+"</li>"; //
 		}
 		respuesta += "</ul>";
 		return respuesta;

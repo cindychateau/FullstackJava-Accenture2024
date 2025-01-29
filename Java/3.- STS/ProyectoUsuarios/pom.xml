@@ -40,6 +40,22 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- Permite mostrar el JSP -->
+		<dependency>
+       		<groupId>org.apache.tomcat.embed</groupId>
+       		<artifactId>tomcat-embed-jasper</artifactId>
+		</dependency>
+		<!-- Permite usar JSTL -->
+		<dependency>
+           <groupId>jakarta.servlet.jsp.jstl</groupId>
+           <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+           <scope>provided</scope>
+		</dependency>
+		<dependency>
+           <groupId>org.glassfish.web</groupId>
+           <artifactId>jakarta.servlet.jsp.jstl</artifactId>
+		</dependency>
+		
 	</dependencies>
 
 	<build>

@@ -33,6 +33,8 @@ public class ControladorBase {
 		return "<h1>Estás buscando:"+termino+"</h1>"; // Estás buscando: sts
 	}
 	
+	// localhost:8080/usuarios?id=1
+	
 	@GetMapping("/hola") // localhost:8080/hola?nombre=Elena
 	public String hola(@RequestParam(value="nombre", required=false) String name) {
 		if(name == null){

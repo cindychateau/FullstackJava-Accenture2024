@@ -6,7 +6,6 @@
 <head>
 <meta charset="UTF-8">
 <title>JSP Practica</title>
-<link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
 	<h1>Bienvenido al mundo de JSP!</h1>
@@ -14,14 +13,8 @@
 	<ul>
 		<!--  {"Elena de Troya", "Juana de Arco", "Pablo Picasso", "Pedro Paramo"} -->
 		<c:forEach items="${users}" var="usuario">
-			<li>
-				${usuario}
-				<c:if test="${usuario == 'Pablo Picasso'}">
-					(¡Amo su arte!)
-				</c:if>
-			</li>
+			<li>${usuario}</li>
 		</c:forEach>
 	</ul>
-	<a href="/formulario">Ir a Formulario</a>
 </body>
 </html>

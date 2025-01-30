@@ -8,10 +8,10 @@
 		<version>3.4.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.empresa</groupId>
-	<artifactId>ProyectoUsuarios</artifactId>
+	<groupId>com</groupId>
+	<artifactId>LibrosYAutores</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>ProyectoUsuarios</name>
+	<name>LibrosYAutores</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
@@ -40,21 +40,21 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<!-- Permite mostrar el JSP -->
+		
 		<dependency>
-       		<groupId>org.apache.tomcat.embed</groupId>
-       		<artifactId>tomcat-embed-jasper</artifactId>
+		    <groupId>org.apache.tomcat.embed</groupId>
+		    <artifactId>tomcat-embed-jasper</artifactId>
 		</dependency>
-		<!-- Permite usar JSTL -->
+		
 		<dependency>
-           <groupId>jakarta.servlet.jsp.jstl</groupId>
-           <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
-           <scope>provided</scope>
-		</dependency>
-		<dependency>
-           <groupId>org.glassfish.web</groupId>
-           <artifactId>jakarta.servlet.jsp.jstl</artifactId>
-		</dependency>
+            <groupId>jakarta.servlet.jsp.jstl</groupId>
+            <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.glassfish.web</groupId>
+            <artifactId>jakarta.servlet.jsp.jstl</artifactId>
+        </dependency>	
 		
 	</dependencies>
 

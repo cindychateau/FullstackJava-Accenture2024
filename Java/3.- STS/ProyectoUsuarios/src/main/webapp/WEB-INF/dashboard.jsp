@@ -13,6 +13,7 @@
 		<header>
 			<h1>¡Bienvenid@ a tu Dashboard!</h1>
 			<!-- Botón para crear un nuevo usuario -->
+			<a href="/nuevo" class="btn btn-info">Crear Usuario</a>
 		</header>
 		<table class="table table-hover">
 			<thead>
@@ -29,7 +30,9 @@
 						<td>${usuario.nombre}</td>
 						<td>${usuario.apellido}</td>
 						<td>${usuario.email}</td>
-						<td></td>
+						<td>
+							<!-- Boton que te lleve a la información de ese usuario -->
+						</td>
 					</tr>
 				</c:forEach>
 			</tbody>

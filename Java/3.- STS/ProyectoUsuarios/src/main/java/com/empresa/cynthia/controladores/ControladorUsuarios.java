@@ -7,10 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -122,5 +124,35 @@ public class ControladorUsuarios {
 		return "mostrar.jsp";
 	}
 	
+	@DeleteMapping("/borrar/{id}") // localhost:8080/borrar/1
+	public String borrar(@PathVariable("id") Long id) { //id = 1
+		serv.borrarUsuario(id);
+		return "redirect:/dashboard";
+	}
+	
+	@GetMapping("/editar/{id}") // localhost:8080/editar/1
+	public String editar(@PathVariable("id") Long id,
+						 @ModelAttribute("usuario") Usuario usuario, /*Crea objeto vacío y lo envía a jsp*/
+						 Model model /*Envía información de método a jsp*/ ) {
+		
+		//Obtener el objeto de usuario a editar
+		Usuario esteUsuario = serv.buscarUsuario(id);
+		model.addAttribute("usuario", esteUsuario); //Sobrescribiendo el usuario vacío
+		
+		return "editar.jsp";
+	}
+	
+	@PutMapping("/actualizar/{id}") //IMPORTANTE: debe llamarse id. Para asignarlo al objeto de ModelAttribute
+	public String actualizar(@Valid @ModelAttribute("usuario") Usuario usuarioEditado,
+							BindingResult result) {
+		
+		if(result.hasErrors()) {
+			return "editar.jsp";
+		} else {
+			serv.guardarUsuario(usuarioEditado);
+			return "redirect:/dashboard";
+		}
+		
+	}
 	
 }

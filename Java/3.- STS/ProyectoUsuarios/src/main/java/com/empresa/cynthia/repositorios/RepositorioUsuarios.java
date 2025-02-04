@@ -19,7 +19,7 @@ public interface RepositorioUsuarios extends CrudRepository<Usuario, Long> {
 	//UPDATE usuarios SET nombre = Valor objeto...
 	Usuario save(Usuario nuevoUsuario); // Usuario cynthia = new Usuario(); cynthia.setNombre("Cynthia"); cynthia.setApellido("Castillo");
 	
-	//CrudRepository: findAll(), findById(id), save(Object objeto), deleteById(id)
+	//CrudRepository: findAll(), findById(id), save(Object objeto), deleteById(id) DELETE FROM usuarios WHERE id = ?
 	
 	//SELECT * FROM usuarios WHERE email = <email a buscar>
 	List<Usuario> findByEmail(String emailABuscar);

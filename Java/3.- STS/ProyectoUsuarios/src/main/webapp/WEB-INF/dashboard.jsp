@@ -32,6 +32,12 @@
 						<td>${usuario.email}</td>
 						<td>
 							<!-- Boton que te lleve a la información de ese usuario -->
+							<form action="/borrar/${usuario.id}" method="post" >
+								<!-- Forzando que la solicitud sea DELETE -->
+								<input type="hidden" name="_method" value="DELETE" >
+								<input type="submit" value="Borrar" class="btn btn-danger">
+							</form>
+							<a href="/editar/${usuario.id}" class="btn btn-warning mt-3">Editar</a>
 						</td>
 					</tr>
 				</c:forEach>

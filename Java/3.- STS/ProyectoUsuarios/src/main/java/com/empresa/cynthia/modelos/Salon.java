@@ -1,6 +1,7 @@
 package com.empresa.cynthia.modelos;
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -10,36 +11,22 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
 
 @Entity
-@Table(name="usuarios") //(name="users")
-public class Usuario {
+@Table(name="salones")
+public class Salon {
 	
-	@Id //Primary Key
-	@GeneratedValue(strategy=GenerationType.IDENTITY) //AI: Autoincremento
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY) //AI
 	private Long id;
 	
-	//@Column(name="name")
-	@NotNull //@NotEmpty
-	@Size(min=2, max=100, message="El nombre debe tener al menos 2 caracteres")
-	private String nombre;
-	
 	@NotNull
-	@Size(min=2, max=100)
-	private String apellido;
-	
-	@NotNull
-	@Size(min=2, max=200)
-	@Email
-	private String email;
+	private String curso;
 	
 	@Column(updatable=false) //Que la columna no puede editarse
 	@DateTimeFormat(pattern="yyyy-MM-dd")
@@ -48,13 +35,10 @@ public class Usuario {
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date updatedAt;
 	
-	@ManyToOne(fetch=FetchType.LAZY) 
-	@JoinColumn(name="salon_id") //Llave foránea
-	private Salon salon;
+	@OneToMany(mappedBy="salon", fetch=FetchType.LAZY)
+	private List<Usuario> usuarios;
 	
-	public Usuario() {
-		
-	}
+	public Salon() {}
 
 	public Long getId() {
 		return id;
@@ -64,28 +48,12 @@ public class Usuario {
 		this.id = id;
 	}
 
-	public String getNombre() {
-		return nombre;
+	public String getCurso() {
+		return curso;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	public String getApellido() {
-		return apellido;
-	}
-
-	public void setApellido(String apellido) {
-		this.apellido = apellido;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
+	public void setCurso(String curso) {
+		this.curso = curso;
 	}
 
 	public Date getCreatedAt() {
@@ -104,12 +72,13 @@ public class Usuario {
 		this.updatedAt = updatedAt;
 	}
 	
-	public Salon getSalon() {
-		return salon;
+	
+	public List<Usuario> getUsuarios() {
+		return usuarios;
 	}
 
-	public void setSalon(Salon salon) {
-		this.salon = salon;
+	public void setUsuarios(List<Usuario> usuarios) {
+		this.usuarios = usuarios;
 	}
 
 	@PrePersist //ANTES de crear al usuario

@@ -9,7 +9,7 @@ import com.empresa.cynthia.modelos.Usuario;
 
 //CRUD: Create Read Update Delete = Crear Leer Actualizar Borrar
 @Repository
-public interface RepositorioUsuarios extends CrudRepository<Usuario, Long> {
+public interface RepositorioUsuarios extends CrudRepository<Usuario, Long> { /*Herencia: extends. Interface en la clase: implements*/
 	
 	//JPA -> Permitir de manera dinámica crear queries
 	

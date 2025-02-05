@@ -21,6 +21,7 @@
 					<th>Nombre</th>
 					<th>Apellido</th>
 					<th>Email</th>
+					<th>Salon</th>
 					<th>Acciones</th>
 				</tr>
 			</thead>
@@ -30,6 +31,7 @@
 						<td>${usuario.nombre}</td>
 						<td>${usuario.apellido}</td>
 						<td>${usuario.email}</td>
+						<td>${usuario.salon.curso}</td>
 						<td>
 							<!-- Boton que te lleve a la información de ese usuario -->
 							<form action="/borrar/${usuario.id}" method="post" >

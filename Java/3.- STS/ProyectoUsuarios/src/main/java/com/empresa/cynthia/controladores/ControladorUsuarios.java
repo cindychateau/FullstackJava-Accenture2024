@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.empresa.cynthia.modelos.Salon;
 import com.empresa.cynthia.modelos.Usuario;
 import com.empresa.cynthia.servicios.Servicios;
 
@@ -41,6 +42,7 @@ public class ControladorUsuarios {
 		return "index.jsp";
 	}
 	
+	//NOFUNCIONA
 	@GetMapping("/peliculas")
 	public String peliculas(Model model) {
 		String pelis[] = {"Interestellar", "Soul", "NOsferatus"};
@@ -98,16 +100,24 @@ public class ControladorUsuarios {
 	}
 	
 	@GetMapping("/nuevo")
-	public String nuevo(@ModelAttribute("usuario") Usuario usuario) {
+	public String nuevo(@ModelAttribute("usuario") Usuario usuario,
+						Model model) {
+		
+		List<Salon> salones = serv.todosSalones(); //Obtengo de la bd todos los salones
+		model.addAttribute("salones", salones);
+		
 		//@ModelAttribute crea un objeto vacío de Usuario y lo manda a nuevo.jsp
 		return "nuevo.jsp";
 	}
 	
 	@PostMapping("/crear")
 	public String crear(@Valid @ModelAttribute("usuario") Usuario nuevoUsuario, /*@Valid: valida la info del objeto*/
-						BindingResult result /*Encargado de revisar los errores*/) {
+						BindingResult result, /*Encargado de revisar los errores*/
+						Model model) {
 		
 		if(result.hasErrors()) {
+			List<Salon> salones = serv.todosSalones(); //Obtengo de la bd todos los salones
+			model.addAttribute("salones", salones);
 			return "nuevo.jsp";
 		} else {
 			serv.guardarUsuario(nuevoUsuario); //Guardar el objeto usuario que recibimos del formulario
@@ -139,14 +149,20 @@ public class ControladorUsuarios {
 		Usuario esteUsuario = serv.buscarUsuario(id);
 		model.addAttribute("usuario", esteUsuario); //Sobrescribiendo el usuario vacío
 		
+		List<Salon> salones = serv.todosSalones(); //Obtengo la lista de salones de bd
+		model.addAttribute("salones", salones); //Envio a jsp
+		
 		return "editar.jsp";
 	}
 	
 	@PutMapping("/actualizar/{id}") //IMPORTANTE: debe llamarse id. Para asignarlo al objeto de ModelAttribute
 	public String actualizar(@Valid @ModelAttribute("usuario") Usuario usuarioEditado,
-							BindingResult result) {
+							BindingResult result,
+							Model model) {
 		
 		if(result.hasErrors()) {
+			List<Salon> salones = serv.todosSalones(); //Obtengo la lista de salones de bd
+			model.addAttribute("salones", salones); //Envio a jsp
 			return "editar.jsp";
 		} else {
 			serv.guardarUsuario(usuarioEditado);

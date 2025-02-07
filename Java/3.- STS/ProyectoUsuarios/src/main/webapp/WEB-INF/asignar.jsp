@@ -11,6 +11,7 @@
 <body>
 	<div class="container">
 		<h1>Asignar hobbies a: ${usuario.nombre}</h1>
+		<a href="/dashboard" class="btn btn-success">Regresar</a>
 		<h2>Hobbies</h2>
 		<table class="table table-striped">
 			<thead>
@@ -25,9 +26,14 @@
 						<td>${hobby.pasatiempo}</td>
 						<td>
 							<!-- Boton para asignar -->
-							<a href="/asignarHobby/${usuario.id}/${hobby.id}" class="btn btn-primary">Asignar Hobby</a>
+							<c:if test="${not usuario.hobbies.contains(hobby)}">
+								<a href="/asignarHobby/${usuario.id}/${hobby.id}" class="btn btn-primary">Asignar Hobby</a>
+							</c:if>
 							
 							<!-- Boton para quitar -->
+							<c:if test="${usuario.hobbies.contains(hobby)}">
+								<a href="/quitarHobby/${usuario.id}/${hobby.id}" class="btn btn-danger" >Quitar Hobby</a>
+							</c:if>
 						</td>
 					</tr>
 				</c:forEach>

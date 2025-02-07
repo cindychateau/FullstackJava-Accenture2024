@@ -94,4 +94,16 @@ public class Servicios {
 		
 	}
 	
+	//Método que quite un hobby de un usuario
+	public void quitarHobbyAUsuario(Long usuarioId, Long hobbyId) {
+		//Obtener al usuario
+		Usuario miUsuario = buscarUsuario(usuarioId);
+		
+		//Obtener al hobby
+		Hobby miHobby = buscarHobby(hobbyId);
+		
+		miUsuario.getHobbies().remove(miHobby);
+		repoUsuarios.save(miUsuario);
+	}
+	
 }

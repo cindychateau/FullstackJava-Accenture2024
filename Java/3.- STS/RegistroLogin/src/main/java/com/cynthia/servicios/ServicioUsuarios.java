@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 
+import com.cynthia.modelos.LoginUsuario;
 import com.cynthia.modelos.Usuario;
 import com.cynthia.repositorios.RepositorioUsuarios;
 
@@ -46,6 +47,30 @@ public class ServicioUsuarios {
 			return repoUsuarios.save(nuevoUsuario);
 		}
 		
+		
+	}
+	
+	//Método que me haga las validaciones del inicio de sesión
+	public Usuario login(LoginUsuario loginUsuario, BindingResult result) {
+		
+		//Revisar que el email exista en mi BD
+		String email = loginUsuario.getEmailLogin();
+		Usuario existeUsuario = repoUsuarios.findByEmail(email); //Objeto Usuario o null
+		if(existeUsuario == null) {
+			//NO EXISTE ese usuario en la tabla
+			result.rejectValue("emailLogin", "Unique", "E-mail no registrado");
+		} else if(! BCrypt.checkpw(loginUsuario.getPasswordLogin(), existeUsuario.getPassword())) {
+			//Si sí existe ese email
+			//Reviso que las contraseñas empaten
+			//Si NO EMPATAN, creamos error de validación
+			result.rejectValue("passwordLogin", "Matches", "Password incorrecto");
+		}
+	
+		if(result.hasErrors()) {
+			return null;
+		} else {
+			return existeUsuario;
+		}
 		
 	}
 	

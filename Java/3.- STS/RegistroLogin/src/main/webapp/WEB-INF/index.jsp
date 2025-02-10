@@ -43,6 +43,22 @@
 					<input type="submit" class="btn btn-primary mt-3" value="Registrarme" >
 				</form:form>
 			</div>
+			<div class="col-6">
+				<h2>Iniciar Sesión</h2>
+				<form:form action="/login" method="POST" modelAttribute="loginUsuario" >
+					<div>
+						<form:label path="emailLogin" >E-mail:</form:label>
+						<form:input path="emailLogin" class="form-control" />
+						<form:errors path="emailLogin" class="text-danger" />
+					</div>
+					<div>
+						<form:label path="passwordLogin" >Password:</form:label>
+						<form:password path="passwordLogin" class="form-control" />
+						<form:errors path="passwordLogin" class="text-danger" />
+					</div>
+					<input type="submit" class="btn btn-info mt-3" value="Iniciar Sesión" >
+				</form:form>
+			</div>
 		</div>
 	</div>
 </body>

@@ -10,7 +10,8 @@
 </head>
 <body>
 	<div class="container">
-		<h1>¡Bienvenid@!</h1>
+		<h1>¡Bienvenid@ ${usuarioEnSesion.nombre} !</h1>
+		<a class="btn btn-danger" href="/logout" >Cerrar Sesión</a>
 	</div>
 </body>
 </html>

@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 
+import com.proyecto.base.modelos.LoginUsuario;
 import com.proyecto.base.modelos.Usuario;
 import com.proyecto.base.repositorios.RepositorioUsuarios;
 
@@ -38,6 +39,31 @@ public class ServicioUsuarios {
 			String passwordHasheado = BCrypt.hashpw(password, BCrypt.gensalt());
 			nuevoUsuario.setPassword(passwordHasheado);
 			return repoUsuarios.save(nuevoUsuario);
+		}
+		
+	}
+	
+	//Método que revise las credenciales de inicio de sesión
+	public Usuario login(LoginUsuario datosInicioDeSesion, BindingResult result) {
+		
+		//Revisamos que exista el correo
+		String email = datosInicioDeSesion.getEmailLogin();
+		Usuario existeUsuario = repoUsuarios.findByEmail(email); //Objeto Usuario o null
+		if(existeUsuario == null) {
+			//El email no está registrado
+			result.rejectValue("emailLogin", "Unique", "E-mail no registrado");
+		} else {
+			//Si la contraseña coincide
+			if(! BCrypt.checkpw(datosInicioDeSesion.getPasswordLogin(), existeUsuario.getPassword())) {
+				//NO COINCIDEN
+				result.rejectValue("passwordLogin", "Matches", "Password incorrecto");
+			}
+		}
+		
+		if(result.hasErrors()) {
+			return null;
+		} else {
+			return existeUsuario;
 		}
 		
 	}

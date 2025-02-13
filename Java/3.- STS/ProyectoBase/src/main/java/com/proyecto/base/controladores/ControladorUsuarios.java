@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.proyecto.base.modelos.LoginUsuario;
 import com.proyecto.base.modelos.Usuario;
 import com.proyecto.base.servicios.ServicioUsuarios;
 
@@ -38,6 +39,32 @@ public class ControladorUsuarios {
 			return "redirect:/dashboard";
 		}
 		
+	}
+	
+	@GetMapping("/login")
+	public String login(@ModelAttribute("loginUsuario") LoginUsuario loginUsuario) {
+		return "login.jsp";
+	}
+	
+	@PostMapping("/iniciarSesion")
+	public String iniciarSesion(@Valid @ModelAttribute("loginUsuario") LoginUsuario loginUsuario,
+								BindingResult result,
+								HttpSession session) {
+		Usuario usuario = sUsuarios.login(loginUsuario, result);
+		
+		if(result.hasErrors()) {
+			return "login.jsp";
+		} else {
+			session.setAttribute("usuarioEnSesion", usuario);
+			return "redirect:/dashboard";
+		}
+		
+	}
+	
+	@GetMapping("/logout")
+	public String logout(HttpSession session) {
+		session.invalidate();
+		return "redirect:/";
 	}
 	
 }

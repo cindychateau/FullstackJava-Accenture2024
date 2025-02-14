@@ -1,7 +1,10 @@
 package com.proyecto.cynthia.controladores;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -21,13 +24,17 @@ public class ControladorDashboard {
 	private ServicioPeliculas servicioPelis;
 	
 	@GetMapping("/dashboard")
-	public String dashboard(HttpSession session) {
+	public String dashboard(HttpSession session,
+							Model model /*Enviar información del método al JSP*/ ) {
 		if(session.getAttribute("usuarioEnSesion") == null){
 			return "redirect:/";
 		}
 		
 		//Generar la lista con las pelis
+		List<Pelicula> peliculas = servicioPelis.todasLasPelis();
+		
 		//Enviar esa lista a dashboard
+		model.addAttribute("peliculas", peliculas);
 		
 		return "dashboard.jsp";
 	}

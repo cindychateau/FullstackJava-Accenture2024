@@ -20,7 +20,8 @@ public class ServicioPeliculas {
 	
 	//Método que regrese todas las pelis
 	public List<Pelicula> todasLasPelis() {
-		return repoPelis.findAll(); // return repoPelis.findAllByOrderTituloAsc();
+		//return repoPelis.findAll(); 
+		return repoPelis.findAllByOrderByTituloAsc(); //BONUS
 	}
 	
 	//Método que me guarde: Crea un nuevo registro (si no tiene id). Actualiza registro si tiene id

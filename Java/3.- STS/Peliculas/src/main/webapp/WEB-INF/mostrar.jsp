@@ -53,6 +53,16 @@
 			  </div>
 			</div>
 		</div>
+		<div class="row">
+			<div class="card mb-3">
+				<h5 class="card-title">Usuarios que la tienen en favoritos</h5>
+				<ul>
+					<c:forEach items="${pelicula.usuarios}" var="usuarioFav">
+						<li>${usuarioFav.nombre} ${usuarioFav.apellido}</li>
+					</c:forEach>
+				</ul>
+			</div>
+		</div>
 	</div>
 </body>
 </html>

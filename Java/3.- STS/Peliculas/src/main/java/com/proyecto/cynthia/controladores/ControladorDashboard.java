@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.proyecto.cynthia.modelos.Pelicula;
 import com.proyecto.cynthia.modelos.Usuario;
@@ -160,6 +161,38 @@ public class ControladorDashboard {
 		servicioPelis.quitarPeliFavorita(usuarioId, peliculaId);
 		
 		return "redirect:/mostrar/"+peliculaId;
+	}
+	
+	@GetMapping("/favoritos")
+	public String favoritos(HttpSession session,
+						    Model model) {
+		/*===== Revisar que el usuario haya iniciado sesión =====*/
+		if(session.getAttribute("usuarioEnSesion") == null){
+			return "redirect:/";
+		}
+		
+		Usuario usuarioEnSesion = (Usuario)session.getAttribute("usuarioEnSesion"); //Obteniendo de la sesión el objeto usuario
+		Usuario usuario = servicioPelis.buscarUsuario(usuarioEnSesion.getId());
+		model.addAttribute("usuario", usuario);
+		
+		return "favoritos.jsp";
+		
+	}
+	
+	@GetMapping("/buscar") // localhost:8080/buscar?palabra=Hannibal
+	public String buscar(@RequestParam(value="palabra") String palabra,
+						HttpSession session,
+					    Model model) {
+		/*===== Revisar que el usuario haya iniciado sesión =====*/
+		if(session.getAttribute("usuarioEnSesion") == null){
+			return "redirect:/";
+		}
+		
+		List<Pelicula> peliculas = servicioPelis.buscarPeliConPalabra(palabra);
+		model.addAttribute("peliculas", peliculas);
+		
+		return "dashboard.jsp";
+ 		
 	}
 	
 }

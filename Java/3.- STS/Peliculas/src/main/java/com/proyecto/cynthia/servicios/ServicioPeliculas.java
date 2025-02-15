@@ -65,4 +65,8 @@ public class ServicioPeliculas {
 		miUsuario.getPelisFavoritas().remove(miPeli);
 		repoUsuarios.save(miUsuario);
 	}
+	
+	public List<Pelicula> buscarPeliConPalabra(String palabra) {
+		return repoPelis.findByTituloContaining(palabra);
+	}
 }

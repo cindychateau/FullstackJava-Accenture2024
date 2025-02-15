@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.proyecto.cynthia.modelos.Pelicula;
+import com.proyecto.cynthia.modelos.Usuario;
 import com.proyecto.cynthia.repositorios.RepositorioPeliculas;
 import com.proyecto.cynthia.repositorios.RepositorioUsuarios;
 
@@ -37,5 +38,31 @@ public class ServicioPeliculas {
 	//Método que bore la peli
 	public void borrarPeli(Long id) {
 		repoPelis.deleteById(id);
+	}
+	
+	public Usuario buscarUsuario(Long id) {
+		return repoUsuarios.findById(id).orElse(null);
+	}
+	
+	public void guardarPeliFavorita(Long usuarioId, Long peliculaId) {
+		//Obtener al usuario que quiere agregar a fav
+		Usuario miUsuario = buscarUsuario(usuarioId);
+		
+		//Obtener la peli que quiero agregar
+		Pelicula miPeli = buscarPeli(peliculaId);
+		
+		miUsuario.getPelisFavoritas().add(miPeli);
+		repoUsuarios.save(miUsuario);
+	}
+	
+	public void quitarPeliFavorita(Long usuarioId, Long peliculaId) {
+		//Obtener al usuario que quiere agregar a fav
+		Usuario miUsuario = buscarUsuario(usuarioId);
+		
+		//Obtener la peli que quiero agregar
+		Pelicula miPeli = buscarPeli(peliculaId);
+		
+		miUsuario.getPelisFavoritas().remove(miPeli);
+		repoUsuarios.save(miUsuario);
 	}
 }

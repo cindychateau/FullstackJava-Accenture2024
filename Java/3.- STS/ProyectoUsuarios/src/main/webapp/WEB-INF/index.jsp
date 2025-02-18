@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>JSP Practica</title>
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/style.css?3">
 </head>
 <body>
 	<h1>Bienvenido al mundo de JSP!</h1>

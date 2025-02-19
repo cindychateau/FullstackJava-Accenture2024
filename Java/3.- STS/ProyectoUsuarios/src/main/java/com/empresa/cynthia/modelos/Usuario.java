@@ -5,6 +5,9 @@ import java.util.List;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -51,10 +54,12 @@ public class Usuario {
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date updatedAt;
 	
+	@JsonBackReference(value="salones-json") //Si quiero que se muestre esa info
 	@ManyToOne(fetch=FetchType.LAZY) 
 	@JoinColumn(name="salon_id") //Llave foránea
 	private Salon salon;
 	
+	@JsonBackReference(value="hobbies-json")
 	@ManyToMany(fetch=FetchType.LAZY) //EAGER
 	@JoinTable(
 			name="usuarios_has_hobbies",

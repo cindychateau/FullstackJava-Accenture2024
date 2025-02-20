@@ -4,6 +4,9 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.empresa.cynthia.modelos.Hobby;
@@ -104,6 +107,13 @@ public class Servicios {
 		
 		miUsuario.getHobbies().remove(miHobby);
 		repoUsuarios.save(miUsuario);
+	}
+	
+	//Método que regresa una página específica
+	public Page<Usuario> usuarioPorPagina(int numPagina){
+		//Numero de Página, Cantidad Registros, Acomodo, Atributo del acomodo
+		PageRequest pageRequest = PageRequest.of(numPagina, 2, Sort.Direction.ASC, "nombre");
+		return repoUsuarios.findAll(pageRequest);
 	}
 	
 }

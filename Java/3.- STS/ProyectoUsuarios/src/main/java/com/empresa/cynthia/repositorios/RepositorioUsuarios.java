@@ -2,14 +2,14 @@ package com.empresa.cynthia.repositorios;
 
 import java.util.List;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import com.empresa.cynthia.modelos.Usuario;
 
 //CRUD: Create Read Update Delete = Crear Leer Actualizar Borrar
 @Repository
-public interface RepositorioUsuarios extends CrudRepository<Usuario, Long> { /*Herencia: extends. Interface en la clase: implements*/
+public interface RepositorioUsuarios extends JpaRepository<Usuario, Long> { /*Herencia: extends. Interface en la clase: implements*/
 	
 	//JPA -> Permitir de manera dinámica crear queries
 	

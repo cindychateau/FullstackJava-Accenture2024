@@ -10,7 +10,7 @@ public class Configuracion implements WebMvcConfigurer {
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		WebMvcConfigurer.super.addResourceHandlers(registry);
-		registry.addResourceHandler("/imagenes/**").addResourceLocations("file:///Users/cynthia/Desktop/imagenesJava");
+		registry.addResourceHandler("/imagenes/**").addResourceLocations("file:///Users/cynthia/Desktop/imagenesJava/");
 	}
 
 }
